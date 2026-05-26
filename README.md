@@ -3,23 +3,26 @@
 Веб-приложение для приёмки заказов на доставку грузов.
 
 ## Функционал
+
 - Создание заказа (город/адрес отправителя и получателя, вес, дата забора)
 - Просмотр списка всех заказов с автоматически сгенерированным GUID
 - Детальный просмотр заказа в режиме чтения
 
 ## Технологии
+
 - ASP.NET Core 9 (MVC)
 - Entity Framework Core 9
-- PostgreSQL
+- PostgreSQL 16
 - Bootstrap 5
+- Docker / Docker Compose
 
-## Запуск проекта
+## Быстрый запуск (Docker)
 
 ### Предварительные требования
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
-- [PostgreSQL](https://www.postgresql.org/download/)
 
-### Настройка
-1. Создайте базу данных `DeliveryOrders` в PostgreSQL:
-   ```sql
-   CREATE DATABASE "DeliveryOrders";
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+### Запуск одной командой
+
+```bash
+docker compose up -d
