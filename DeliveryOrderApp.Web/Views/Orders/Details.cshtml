@@ -1,0 +1,64 @@
+@model DeliveryOrderApp.Web.Models.Order
+@{
+    ViewData["Title"] = $"Заказ {Model.Id}";
+}
+
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index">Заказы</a></li>
+            <li class="breadcrumb-item active">@Model.Id</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Заказ: @Model.Id</h4>
+            <span class="badge bg-light text-dark fs-6">
+                @Model.PickupDate.ToString("dd.MM.yyyy")
+            </span>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Отправитель</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4">Город</dt>
+                        <dd class="col-sm-8">@Model.SenderCity</dd>
+                        <dt class="col-sm-4">Адрес</dt>
+                        <dd class="col-sm-8">@Model.SenderAddress</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <h5>Получатель</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4">Город</dt>
+                        <dd class="col-sm-8">@Model.ReceiverCity</dd>
+                        <dt class="col-sm-4">Адрес</dt>
+                        <dd class="col-sm-8">@Model.ReceiverAddress</dd>
+                    </dl>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Груз</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4">Вес</dt>
+                        <dd class="col-sm-8">@Model.Weight.ToString("F2") кг</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <h5>Дата забора</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4">Дата</dt>
+                        <dd class="col-sm-8">@Model.PickupDate.ToString("dd MMMM yyyy")</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Index" class="btn btn-secondary">← Назад к списку</a>
+        </div>
+    </div>
+</div>
