@@ -12,7 +12,7 @@
 
 - ASP.NET Core 9 (MVC)
 - Entity Framework Core 9
-- PostgreSQL 16
+- PostgreSQL 17.7
 - Bootstrap 5
 - Docker / Docker Compose
 
